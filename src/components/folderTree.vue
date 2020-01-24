@@ -1,7 +1,7 @@
 <template>
   <div>
-    <q-list-header v-if="isWin">Drives</q-list-header>
-    <q-list-header v-else>File System</q-list-header>
+    <q-item-label header v-if="isWin">Drives</q-item-label>
+    <q-item-label header v-else>File System</q-item-label>
 
     <q-tree
       ref="folders"
@@ -75,6 +75,11 @@ export default {
 
   methods: {
     expandTree: function (absolutePath) {
+      // alert(absolutePath)
+      // let regex = /(^|[/\\])\..|~./
+      // if (regex.test(absolutePath)) {
+      //   return
+      // }
       // get parts for the path
       let parts = absolutePath.split(path.sep)
       let path2 = ''

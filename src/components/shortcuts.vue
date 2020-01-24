@@ -4,34 +4,48 @@
     link
     inset-delimiter
   >
-    <q-list-header>Shortcuts</q-list-header>
-    <q-item @click.native="onHome">
-      <q-item-side icon="home" />
-      <q-item-main label="Home" />
+    <q-item-label header>Shortcuts</q-item-label>
+    <q-item @click.native="onHome" clickable>
+      <q-item-section side>
+        <q-icon name="home" />
+      </q-item-section>
+      <q-item-section>Home</q-item-section>
     </q-item>
-    <q-item @click.native="onDesktop">
-      <q-item-side icon="desktop_windows" />
-      <q-item-main label="Desktop" />
+    <q-item @click.native="onDesktop" clickable>
+      <q-item-section side>
+         <q-icon name="desktop_windows" />
+         </q-item-section>
+      <q-item-section>Desktop</q-item-section>
     </q-item>
-    <q-item @click.native="onDocuments">
-      <q-item-side icon="folder" />
-      <q-item-main label="Documents" />
+    <q-item @click.native="onDocuments" clickable>
+         <q-item-section side>
+         <q-icon name="folder" />
+         </q-item-section>
+      <q-item-section>Documents</q-item-section>
     </q-item>
-    <q-item @click.native="onDownloads">
-      <q-item-side icon="vertical_align_bottom" />
-      <q-item-main label="Downloads" />
+    <q-item @click.native="onDownloads" clickable>
+      <q-item-section side>
+         <q-icon name="vertical_align_bottom" />
+         </q-item-section>
+      <q-item-section>Downloads</q-item-section>
     </q-item>
-    <q-item @click.native="onPictures">
-      <q-item-side icon="image" />
-      <q-item-main label="Pictures" />
+    <q-item @click.native="onPictures" clickable>
+      <q-item-section side>
+         <q-icon name="image" />
+         </q-item-section>
+      <q-item-section>Pictures</q-item-section>
     </q-item>
-    <q-item @click.native="onMusic">
-      <q-item-side icon="music_note" />
-      <q-item-main label="Music" />
+    <q-item @click.native="onMusic" clickable>
+      <q-item-section side>
+        <q-icon name="music_note" />
+        </q-item-section>
+      <q-item-section>Music</q-item-section>
     </q-item>
-    <q-item @click.native="onMovies">
-      <q-item-side icon="local_movies" />
-      <q-item-main label="Movies" />
+    <q-item @click.native="onMovies" clickable>
+      <q-item-section side>
+        <q-icon name="local_movies" />
+        </q-item-section>
+      <q-item-section>Movies</q-item-section>
     </q-item>
   </q-list>
 </template>

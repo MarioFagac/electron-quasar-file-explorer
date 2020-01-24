@@ -3,17 +3,23 @@
 module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
-    plugins: [
-    ],
-    css: [
-      'app.styl'
-    ],
+    boot: [],
+    css: ['app.styl'],
     extras: [
-      ctx.theme.mat ? 'roboto-font' : null,
-      'material-icons' // optional, you are not bound to it
-      // 'ionicons',
-      // 'mdi',
-      // 'fontawesome'
+      'material-icons',
+      'material-icons-outlined',
+      'material-icons-round',
+      'material-icons-sharp',
+      'mdi-v3',
+      'ionicons-v4',
+      'eva-icons',
+      'fontawesome-v5',
+      'themify'
+      // 'roboto-font',
+      // 'material-icons' // optional, you are not bound to it
+      // 'ionicons-v4',
+      // 'mdi-v3',
+      // 'fontawesome-v5'
     ],
     supportIE: false,
     build: {
@@ -41,8 +47,8 @@ module.exports = function (ctx) {
     framework: {
       components: [
         'QLayout',
-        'QLayoutHeader',
-        'QLayoutDrawer',
+        'QHeader',
+        'QDrawer',
         'QPageContainer',
         'QPage',
         'QToolbar',
@@ -50,25 +56,22 @@ module.exports = function (ctx) {
         'QBtn',
         'QIcon',
         'QList',
-        'QListHeader',
+        'QItemLabel',
         'QItem',
-        'QItemMain',
-        'QItemSide',
+        'QItemSection',
         'QTree',
         'QTable',
         'QTh',
         'QTr',
-        'QTd'
+        'QTd',
+        'QImg',
+        'QSlider',
+        'QSeparator'
       ],
-      directives: [
-        'Ripple'
-      ],
+      directives: ['Ripple'],
       // Quasar plugins
-      plugins: [
-        'Notify'
-      ]
-      // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
-      // i18n: 'de' // Quasar language
+      plugins: ['Notify']
+      // lang: 'de' // Quasar language
     },
     // animations: 'all' --- includes all animations
     animations: [],
@@ -88,29 +91,29 @@ module.exports = function (ctx) {
         theme_color: '#027be3',
         icons: [
           {
-            'src': 'statics/icons/icon-128x128.png',
-            'sizes': '128x128',
-            'type': 'image/png'
+            src: 'statics/icons/icon-128x128.png',
+            sizes: '128x128',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-192x192.png',
-            'sizes': '192x192',
-            'type': 'image/png'
+            src: 'statics/icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-256x256.png',
-            'sizes': '256x256',
-            'type': 'image/png'
+            src: 'statics/icons/icon-256x256.png',
+            sizes: '256x256',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-384x384.png',
-            'sizes': '384x384',
-            'type': 'image/png'
+            src: 'statics/icons/icon-384x384.png',
+            sizes: '384x384',
+            type: 'image/png'
           },
           {
-            'src': 'statics/icons/icon-512x512.png',
-            'sizes': '512x512',
-            'type': 'image/png'
+            src: 'statics/icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
           }
         ]
       }
@@ -125,43 +128,39 @@ module.exports = function (ctx) {
       },
       packager: {
         // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
-
         // OS X / Mac App Store
         // appBundleId: '',
         // appCategoryType: '',
         // osxSign: '',
         // protocol: 'myapp://path',
-
         // Window only
         // win32metadata: { ... }
       },
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        'appId': 'com.intelliviewtech.ivt-alerts-and-archives-player',
-        'copyright': 'Copyright © 2018 Intelliview Technologies',
-        'productName': 'IVT Offline Alerts and Archives Player',
-        'asar': true,
-        'fileAssociations': [
+        appId: 'com.intelliviewtech.ivt-alerts-and-archives-player',
+        copyright: 'Copyright © 2018 Intelliview Technologies',
+        productName: 'IVT Offline Alerts and Archives Player',
+        asar: true,
+        fileAssociations: [
           {
-            'ext': 'mp4',
-            'role': 'Video'
+            ext: 'mp4',
+            role: 'Video'
           }
         ],
-        'linux': {
-          'category': 'AudioVideo;Viewer',
-          'target': [
+        linux: {
+          category: 'AudioVideo;Viewer',
+          target: [
             {
-              'target': 'AppImage',
-              'arch': [
-                'x64'
-              ]
+              target: 'AppImage',
+              arch: ['x64']
             }
           ]
         },
-        'win': {
-          'legalTrademarks': 'Copyright © 2018 Jeff Galbraith',
-          'publisherName': 'Jeff Galbraith'
+        win: {
+          legalTrademarks: 'Copyright © 2018 Jeff Galbraith',
+          publisherName: 'Jeff Galbraith'
         }
       }
     }

@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hhh LpR lFf">
-    <q-layout-header>
+    <q-header>
       <q-toolbar
         color="primary"
         :glossy="$q.theme === 'mat'"
@@ -34,12 +34,12 @@
         </div>
 
       </q-toolbar>
-    </q-layout-header>
+    </q-header>
 
-    <q-layout-drawer
+    <q-drawer
       v-model="leftDrawerOpen"
       behavior="desktop"
-      :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
+      content-class="bg-grey-2"
     >
 
       <shortcuts
@@ -52,7 +52,7 @@
         @selected="onSelectedFolder"
       />
 
-    </q-layout-drawer>
+    </q-drawer>
 
     <q-page-container>
       <contents
