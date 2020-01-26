@@ -30,12 +30,18 @@ export default {
     viewType: {
       type: String,
       required: true
+    },
+    width: {
+      default: 128,
+      type: Number,
+      required: true
     }
   },
 
   data () {
     return {
-      width: 75,
+      // width is defined as prop
+      // width: 75,
       fontSize: 12,
       delay: 200,
       timer: null

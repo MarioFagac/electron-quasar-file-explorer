@@ -11,6 +11,7 @@
               @click="onClick"
               @dblClick="onDblClick"
               class="non-selectable"
+              :width="width"
             />
           </div>
         </div>
@@ -70,6 +71,11 @@ export default {
     },
     viewType: {
       type: String,
+      required: true
+    },
+    width: {
+      default: 128,
+      type: Number,
       required: true
     }
   },

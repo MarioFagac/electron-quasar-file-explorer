@@ -21,6 +21,16 @@
           @selected="onSelectedFolder"
         />
 
+        <q-separator inset />
+
+        <q-slider
+          v-model="standard"
+          :min="64"
+          :max="512"
+          style='width: 200px'
+          color="white"
+        />
+
         <div class="float-right" style="margin-left: 10px;">
           <q-btn
             flat
@@ -61,6 +71,7 @@
         :viewType="viewType"
         @click="onClicked"
         @dblClick="onDblClicked"
+        :width="standard"
       />
     </q-page-container>
   </q-layout>
@@ -97,6 +108,7 @@ export default {
 
   data () {
     return {
+      standard: 128, // initial icon size
       leftDrawerOpen: true, // this.$q.platform.is.desktop,
       toolbarLinks: [], // toolbar pathway (links to each folder in path)
       drive: process.platform === 'win32' ? 'C:' : '',
