@@ -25,7 +25,7 @@ export default {
     }
   },
 
-  computed: {
+  asyncComputed: {
     gridItemImageContainerStyleObject: function () {
       return {
         height: this.width + 'px',
