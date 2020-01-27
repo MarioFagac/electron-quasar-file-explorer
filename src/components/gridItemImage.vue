@@ -35,9 +35,12 @@ export default {
 
     gridItemImageStyleObject: function () {
       return {
-        'max-height': this.width + 'px',
-        'max-width': this.width + 'px',
-        'vertical-align': 'middle'
+        // 'max-height': this.width + 'px',
+        // 'max-width': this.width + 'px',
+        // 'vertical-align': 'middle'
+        height: this.width + 'px',
+        width: this.width + 'px',
+        'object-fit': 'contain'
       }
     },
 

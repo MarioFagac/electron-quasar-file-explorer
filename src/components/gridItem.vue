@@ -139,8 +139,15 @@ export default {
   -webkit-filter: brightness(108%);
   filter: brightness(108%);
 }
-.griditemtext {
+/* .griditemtext {
   text-align: center;
   word-wrap: break-word;
+} */
+.griditemtext {
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: white;
 }
 </style>
