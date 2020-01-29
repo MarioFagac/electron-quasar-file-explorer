@@ -1,6 +1,6 @@
 <template>
   <div v-if="contents && contents.length">
-    <div class="contents-container">
+    <div class="contents-container" id="myel">
       <div class="contents-wrapper">
         <div v-show="listType === 'grid'" class="row justify-left">
           <div v-for="node in contents" :key="node.nodeKey">
@@ -138,6 +138,11 @@ export default {
   },
 
   methods: {
+    resetScroll: function () {
+      var el = document.getElementById('myel')
+      el.scrollTop = 0
+    },
+
     // when a node is single-clicked
     onClick: function (node) {
       this.selectedNode = node
@@ -188,6 +193,10 @@ export default {
     getIcon: function (node) {
       return 'menu'
     }
+  },
+
+  mounted: function () {
+    this.$root.$on('reset-scroll', this.resetScroll)
   }
 }
 </script>

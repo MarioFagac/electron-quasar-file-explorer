@@ -281,6 +281,7 @@ export default {
     },
 
     clearAllContentItems: function () {
+      this.$root.$emit('reset-scroll')
       this.contents.splice(0, this.contents.length)
     },
 
