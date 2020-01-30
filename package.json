@@ -70,7 +70,6 @@
     "eslint-plugin-vue": "^4.3.0",
     "fibers": "^4.0.2",
     "popper.js": "^1.16.0",
-    "production": "0.0.2",
     "quasar": "^1.2.7",
     "sass": "^1.23.1",
     "strip-ansi": "=3.0.1",
